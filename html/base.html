@@ -1,12 +1,13 @@
 <head>
     <title>Tutorial App</title>
-    <script src="http://cdn.html5stac.com/js/html5stac-1.0.3.min.js"></script>
+    <script src="http://cdn.html5stac.com/js/html5stac-1.1.min.js"></script>
     <script>
-        MobStac.Utils.loadTemplate("index");
         $().ready(function() {
-            var template = Handlebars.compile( MobStac.Utils.getTemplate("index") );
-            var html = template(); 
-            $('#placeholder').html(html);
+            MobStac.Utils.loadTemplate("index", function() {
+                var template = Handlebars.compile( MobStac.Utils.getTemplate("index") );
+                var html = template(); 
+                $('#placeholder').html(html);
+            });
         });
     </script>
 </head>
